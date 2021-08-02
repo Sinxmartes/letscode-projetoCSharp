@@ -142,7 +142,7 @@ namespace projectCSharp
                 }
             } */
 
-            List<string> comida = new List<string>();
+            /* List<string> comida = new List<string>();
 
             comida.Add("arroz");
             comida.Add("feijão");
@@ -152,18 +152,17 @@ namespace projectCSharp
 
             foreach(var item in comida) {
                 Console.WriteLine(item);
-            }
+            }*/
 
             /* int y = comida.FindIndex(x => x.Contains("batata"));
 
             Console.WriteLine(y); */
 
-            comida.Remove("arroz");
+            /*comida.Remove("arroz");
 
             foreach(var item in comida) {
                 Console.WriteLine(item);
-            }
-
+            }*/
 
             /**
                 Collections
@@ -226,15 +225,15 @@ namespace projectCSharp
             //     Console.WriteLine(i);
             // }
 
-            Dictionary<string, float> listaMercadoAprimorada = new Dictionary<string, float>();
+            /* Dictionary<string, float> listaMercadoAprimorada = new Dictionary<string, float>();
             Dictionary<int, string> listaCodigoDeBarras = new Dictionary<int, string>();
-            int indiceContador = 1;
+            int indiceContador = 1; */
 
             // listaMercadoAprimorada.Add("Leite", 4.99f);
             // listaMercadoAprimorada.Add("Pão", 1.00f);
 
-            Console.WriteLine($"adicionando chave {indiceContador}");
-            listaCodigoDeBarras.Add(indiceContador++, "Leite");
+            /* Console.WriteLine($"adicionando chave {indiceContador}");
+            listaCodigoDeBarras.Add(indiceContador++, "Leite"); */
 
             //listaMercadoAprimorada["Leite"] = 3;
 
@@ -248,8 +247,8 @@ namespace projectCSharp
             //     Console.WriteLine($"o código de barras {i.Key} é o item {i.Value}");
             // }
 
-            Console.WriteLine($"adicionando chave {indiceContador}");
-            listaCodigoDeBarras.Add(indiceContador, "Pão");
+            /* Console.WriteLine($"adicionando chave {indiceContador}");
+            listaCodigoDeBarras.Add(indiceContador, "Pão"); */
 
             // listaCodigoDeBarras[12] = "Manteiga";
             // Console.WriteLine("atualiando código de barras");
@@ -257,7 +256,7 @@ namespace projectCSharp
             // listaCodigoDeBarras.Add(20, "Leite");
             // Console.WriteLine("adicionando novo item na lista");
 
-            Console.WriteLine($"Confere se a chave {indiceContador} já existe");
+            /* Console.WriteLine($"Confere se a chave {indiceContador} já existe");
             if(listaCodigoDeBarras.ContainsKey(indiceContador))
             {
                 Console.WriteLine($"chave {indiceContador} já existe, adicionando chave {++indiceContador}");
@@ -282,6 +281,75 @@ namespace projectCSharp
             foreach(KeyValuePair<int, string> i in listaCodigoDeBarras)
             {
                 Console.WriteLine($"o código de barras {i.Key} é o item {i.Value}");
+            } */
+          
+            //int opcao = Int32.Parse(Console.ReadLine());
+            
+            menu();
+
+            /*
+                switch (opcao)
+                {
+                    case 1:
+                    case 2:
+                    case 3:
+                        // dados para opcao 1, 2 e 3 
+                        Console.WriteLine($"Opção {opcao} escolhida");
+                        break;
+                    default:
+                        Console.WriteLine("Opção Inválida");
+                        break;
+                }
+            */
+        }
+
+        static void opcaoUm() {
+            Console.WriteLine("Vamos iniciar um novo jogo");
+            Console.WriteLine("Era uma vez, um carro chamado Relampago Marquinho");            
+        }
+
+        static void opcaoDois() {
+            Console.WriteLine("Escolha o jogo a ser carregado:");            
+        }
+
+        static void opcaoTres() {
+            Console.WriteLine("Saindo..."); 
+        }
+
+        static void menu() {
+            Console.WriteLine("Bem vindo ao jogo de texto");
+            Console.WriteLine("Escolha uma das opções abaixo:");
+            Console.WriteLine("1 - Novo jogo");
+            Console.WriteLine("2 - Carregar jogo");
+            Console.WriteLine("3 - Sair");
+            opcoes();
+        }
+
+        static void opcoes() {
+            int opcao;
+            
+            do {
+                Console.Write("Escolha uma das opções: ");
+                opcao = Convert.ToInt32(Console.ReadLine());
+                
+                if(opcao != 1 && opcao != 2 && opcao != 3) Console.WriteLine("Opção Invalida, tente novamente");
+                // vamos transformar em um if ternário
+
+            } while(opcao != 1 && opcao != 2 && opcao != 3);
+
+            switch (opcao) {
+                case 1:
+                    // dados para opcao 1
+                    opcaoUm();
+                    break;
+                case 2:
+                    // dados para opcao 2
+                    opcaoDois();
+                    break;
+                case 3:
+                    // dados para opcao 3 
+                    opcaoTres();
+                    break;
             }
         }
     }

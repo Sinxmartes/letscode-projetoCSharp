@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/sinxmartes/LetsCode/projectCSharp/projectCSharp.csproj",
+      "projectUniqueName": "/home/sinxmartes/LetsCode/letscode-projetoCSharp/projectCSharp.csproj",
       "projectName": "projectCSharp",
-      "projectPath": "/home/sinxmartes/LetsCode/projectCSharp/projectCSharp.csproj",
+      "projectPath": "/home/sinxmartes/LetsCode/letscode-projetoCSharp/projectCSharp.csproj",
       "packagesPath": "/home/sinxmartes/.nuget/packages/",
-      "outputPath": "/home/sinxmartes/LetsCode/projectCSharp/obj/",
+      "outputPath": "/home/sinxmartes/LetsCode/letscode-projetoCSharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/sinxmartes/.nuget/NuGet/NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.204/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.205/RuntimeIdentifierGraph.json"
       }
     }
   }

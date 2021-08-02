@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WEYtb6bij/6wXW54nfctXzbfsiKAa3Gn9d4vLUQ2NsE7uD6urFxlNEynwJH8UkMkB4URzDQ+97ZAwO/n/aZCgw==",
+  "dgSpecHash": "PdHIZ0Y/aaayjLvxgAoA+D1ah4qcyk7mxRLq7MjDi9hUKDkIVhIFI2TflBW/GjEwMvHP3Rr84l1SsugjFlxUQg==",
   "success": true,
-  "projectFilePath": "/home/sinxmartes/LetsCode/projectCSharp/projectCSharp.csproj",
+  "projectFilePath": "/home/sinxmartes/LetsCode/letscode-projetoCSharp/projectCSharp.csproj",
   "expectedPackageFiles": [
     "/home/sinxmartes/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],

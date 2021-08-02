@@ -1,0 +1,39 @@
+A = 10
+B = 20
+
+cond1 = A + B = 30
+cond2 = A - B = 10
+
+OPERADOR .E. - PARA SER VERDADEIROS, TODAS AS CONDIÇÕES PRECISAM SER VERDADEIRAS
+OPERADOR .OU. - PARA SER VERDADEIRO, APENAS UMA DAS CONDIÇÕES PRECISA SER VERDADEIRA
+
+ A | B | cond1 | cond2 |  cond1 .E. cond2 | cond1. OU. cond2
+10 | 20|   V   |   F   |         F        |        V
+15 | 15|   V   |   F   |         F        |        V
+20 | 10|   V   |   V   |         V        |        V
+
+
+i = 0
+e a cada segundo, i = i + 1
+e o programa roda por 10 segundos
+
+cond1 = i = 2
+cond2 = (i + 1) possui resto (calculo de mod) [(i+1) mod 2]
+cond3 = i <= 10
+cond4 = i > 5
+res1 = cond1.E.cond2
+res2 = cond3.OU.cond4
+res3 = res1 .E. res2
+res4 = .NÃO. res3 (*-1)
+
+I|COND1|COND2|COND3|COND4|RES01|RES02|RES03|RES04|
+0|  F  |  V  |  V  |  F  |  F  |  V  |  F  |  V  |
+1|  F  |  F  |  V  |  F  |  F  |  V  |  F  |  V  |
+2|  V  |  V  |  V  |  F  |  V  |  V  |  V  |  F  |
+3|  F  |  F  |  V  |  F  |  F  |  V  |  F  |  V  |
+4|  F  |  V  |  V  |  F  |  F  |  V  |  F  |  V  |
+5|  F  |  F  |  V  |  F  |  F  |  V  |  F  |  V  |
+6|  F  |  V  |  V  |  V  |  F  |  V  |  F  |  V  |
+7|  F  |  F  |  V  |  V  |  F  |  V  |  F  |  V  |
+8|  F  |  V  |  V  |  V  |  F  |  V  |  F  |  V  |
+9|  F  |  F  |  V  |  V  |  F  |  V  |  F  |  V  |

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace projectCSharp
@@ -285,7 +286,9 @@ namespace projectCSharp
           
             //int opcao = Int32.Parse(Console.ReadLine());
             
-            menu();
+            /* menu(); */
+
+            menuLinq();            
 
             /*
                 switch (opcao)
@@ -325,6 +328,38 @@ namespace projectCSharp
             opcoes();
         }
 
+        static void menuLinq() {
+            Console.WriteLine("Bem vindo a consulta de dados");
+            Console.WriteLine("Escolha uma das opções abaixo:");
+            Console.WriteLine("1 - Nome");
+            Console.WriteLine("2 - Raça");
+            Console.WriteLine("3 - Planeta");
+            opcoesLinq();
+        }
+
+        static void opcoesLinq() {
+            int opcao;            
+            do {
+                Console.Write("Escolha uma das opções: ");
+                opcao = Convert.ToInt32(Console.ReadLine());                
+                if(opcao != 1 && opcao != 2 && opcao != 3) Console.WriteLine("Opção Invalida, tente novamente");                
+            } while(opcao != 1 && opcao != 2 && opcao != 3);
+            switch (opcao) {
+                case 1:
+                    Console.Write("Por favor, digite o nome do personagem desejado: ");
+                    linqNome(Console.ReadLine());
+                    break;
+                case 2:
+                    Console.Write("Por favor, digite a raça do personagem desejado: ");
+                    linqRaca(Console.ReadLine());
+                    break;
+                case 3:
+                    Console.Write("Por favor, digite o planeta do personagem desejado: ");
+                    linqPlaneta(Console.ReadLine());
+                    break;
+            }
+        }
+
         static void opcoes() {
             int opcao;
             
@@ -352,5 +387,95 @@ namespace projectCSharp
                     break;
             }
         }
+
+        static void aulaLinq(string planeta) {
+            /* int[] numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+            var numQuery =
+                from num in numeros
+                where (num % 2) == 0
+                select num;
+                
+            foreach(int num in numQuery) {
+                Console.Write($"{num}, ");
+            }
+
+            Console.WriteLine("\n"); */
+
+            //Personagens personagem = new Personagens("marco", "ser humano", "terra");
+
+            IList<Personagens> fontePersonagens = cadastrarDados();
+
+            IEnumerable<Personagens> retorno =
+                    from d in fontePersonagens
+                    where d.Planeta == planeta
+                    select d;
+
+            foreach(Personagens personagem in retorno) {
+                Console.WriteLine($"Nome: {personagem.Nome} \nRaça: {personagem.Raca} \nPlaneta: Casa {personagem.Planeta}");
+            }
+        }
+
+        static void linqPlaneta(string planeta) {
+            IList<Personagens> fontePersonagens = cadastrarDados();
+
+            IEnumerable<Personagens> retorno =
+                    from d in fontePersonagens
+                    where d.Planeta == planeta
+                    select d;
+
+            foreach(Personagens personagem in retorno) {
+                Console.WriteLine($"Nome: {personagem.Nome} \nRaça: {personagem.Raca} \nPlaneta: Casa {personagem.Planeta}");
+            }
+        }
+
+        static void linqNome(string nome) {
+            IList<Personagens> fontePersonagens = cadastrarDados();
+
+            IEnumerable<Personagens> retorno =
+                    from d in fontePersonagens
+                    where d.Nome == nome
+                    select d;
+
+            foreach(Personagens personagem in retorno) {
+                Console.WriteLine($"Nome: {personagem.Nome} \nRaça: {personagem.Raca} \nPlaneta: Casa {personagem.Planeta}");
+            }
+        }
+
+        static void linqRaca(string raca) {
+            IList<Personagens> fontePersonagens = cadastrarDados();
+
+            IEnumerable<Personagens> retorno =
+                    from d in fontePersonagens
+                    where d.Raca == raca
+                    select d;
+
+            foreach(Personagens personagem in retorno) {
+                Console.WriteLine($"Nome: {personagem.Nome} \nRaça: {personagem.Raca} \nPlaneta: Casa {personagem.Planeta}");
+            }
+        }
+
+        static IList<Personagens> cadastrarDados() {
+            return new List<Personagens>() {
+                new Personagens("Chaves", "barril", "8"),
+                new Personagens("Chiquinha", "anã", "14"),
+                new Personagens("Bruxa do 71", "bruxas", "71"),
+                new Personagens("Seu Madruga", "caloteiro", "14"),
+            };
+        }
+    }
+
+    class Personagens {
+        public Personagens(string _nome, string _raca, string _planeta) {
+            Nome = _nome;
+            Raca = _raca; 
+            Planeta = _planeta;
+        }
+
+        public string Nome { get; set; }
+
+        public string Raca { get; set; }
+
+        public string Planeta { get; set; }
     }
 }

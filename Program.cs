@@ -288,7 +288,10 @@ namespace projectCSharp
             
             /* menu(); */
 
-            menuLinq();            
+            /* menuLinq();      */       
+            
+            var retornoMenu = projectCSharp.Menu.menu();
+            Console.WriteLine(retornoMenu);
 
             /*
                 switch (opcao)
@@ -316,7 +319,7 @@ namespace projectCSharp
         }
 
         static void opcaoTres() {
-            Console.WriteLine("Saindo..."); 
+            Console.WriteLine("Saindo.."); 
         }
 
         static void menu() {
@@ -399,11 +402,11 @@ namespace projectCSharp
             foreach(int num in numQuery) {
                 Console.Write($"{num}, ");
             }
-
+  
             Console.WriteLine("\n"); */
 
             //Personagens personagem = new Personagens("marco", "ser humano", "terra");
-
+            
             IList<Personagens> fontePersonagens = cadastrarDados();
 
             IEnumerable<Personagens> retorno =
